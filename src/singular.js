@@ -109,4 +109,4 @@ var Singular = {
   }
 };
 
-export default Singular;
+exports.Singular = Singular;
