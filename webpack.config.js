@@ -10,11 +10,23 @@ var htmlFileReader =  {
         {
           loader: 'file-loader',
           options: {
-            name: '[name].html'
+              name: '[name].html'
           }
         }
       ]
-    }
+    },
+      {
+          test: /\.js$/,
+          exclude: /(node_modules|bower_components)/,
+          use: [
+              {
+                  loader: 'babel-loader',
+                  options: {
+                      plugins: ['babel-plugin-transform-runtime']
+                  }
+              }
+          ]
+      }
   ]
 };
 
@@ -22,7 +34,7 @@ module.exports = [
   {
     module: htmlFileReader,
     entry:
-      ['idempotent-babel-polyfill', './src/singular.js'],
+      ['./src/singular.js'],
     output: {
       filename: 'singular.js',
       path: path.resolve(__dirname, 'singular'),
@@ -32,7 +44,7 @@ module.exports = [
   },
   {
     module: htmlFileReader,
-    entry: ['idempotent-babel-polyfill', './src/rpFrame.js'],
+    entry: ['./src/rpFrame.js'],
     output: {
       filename: 'rpFrame.js',
       path: path.resolve(__dirname, 'singular'),
@@ -40,4 +52,4 @@ module.exports = [
       libraryExport: 'default'
     }
   }
-]
+];

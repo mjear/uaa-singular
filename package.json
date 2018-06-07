@@ -9,19 +9,22 @@
     "singular"
   ],
   "dependencies": {
-    "idempotent-babel-polyfill": "^0.1.1",
+    "babel-runtime": "^6.26.0",
     "jwt-simple": "^0.5.0"
   },
   "devDependencies": {
-    "http-server": "",
-    "file-loader": "^1.1.11",
-    "webpack": "^4.8.3",
-    "webpack-cli": "^2.1.3",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "chromedriver": "^2.37.0",
+    "file-loader": "^1.1.11",
+    "http-server": "",
     "jasmine": "^2.9.0",
     "jasmine-core": "^2.9.1",
     "nightwatch": "^0.9.19",
-    "selenium-server-standalone-jar": "^3.8.1"
+    "selenium-server-standalone-jar": "^3.8.1",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
   },
   "scripts": {
     "build": "rm -rf singular && webpack",
